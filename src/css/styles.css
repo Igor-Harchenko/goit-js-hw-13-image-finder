@@ -1,0 +1,121 @@
+:root {
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.is-hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(95, 97, 97);
+}
+
+input {
+  width: 1200px;
+  height: 50px;
+  font-size: 24px;
+  border-width: 0;
+  border-radius: 40px;
+  padding: 5px 20px;
+  margin: 25px auto;
+}
+
+.gallery {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-width: calc(100% - 64px);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 24px;
+}
+
+.photo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000;
+  border-radius: 10px;
+  transition: transform var(--animation);
+  overflow: hidden;
+}
+
+.photo-card:hover {
+  transform: scale(1.03);
+}
+
+.card-img {
+  height: 300px;
+  object-fit: cover;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+  flex-grow: 1;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(241, 252, 86);
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#loadMore {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 200px;
+  color: rgb(95, 97, 97);
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: rgb(241, 252, 86);
+  cursor: pointer;
+  transition: all var(--animation);
+  /* box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12); */
+}
+#loadMore:hover {
+  color: #000000;
+  background-color: #fff;
+  border: 2px solid #833ab4;
+  text-decoration: none;
+  box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+}
